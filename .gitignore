@@ -1,0 +1,12 @@
+# Python
+.env
+__pycache__/
+.pytest_cache/
+.venv/
+*.db
+*.pyc
+.mypy_cache/
+.idea/
+.vscode/
+dist/
+build/

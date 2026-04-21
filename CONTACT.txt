@@ -1,0 +1,5 @@
+Full Name: Your Name Here
+Email: your.email@example.com
+Phone: +00-00000-00000
+GitHub: https://github.com/your-username
+Most Challenging Part: Designing the dual-token flow for Monitoring Officer while keeping endpoint authorization simple and testable.
