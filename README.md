@@ -2,7 +2,9 @@
 
 ## 1) Live API Base URL and Deployment Notes
 
-- Live base URL: NOT DEPLOYED YET
+- GitHub repository: [Aravinthpvm/Submission](https://github.com/Aravinthpvm/Submission)
+- Live base URL: PENDING_DEPLOYMENT
+- Live health/docs URL placeholder: `https://your-service.platform-domain/docs`
 - Deployment target tested locally: FastAPI app with PostgreSQL-compatible SQLAlchemy setup
 - If deployment is pending, this repository is still runnable and testable locally.
 
