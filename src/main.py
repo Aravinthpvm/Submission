@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import logging
 import secrets
+import time
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.responses import JSONResponse
@@ -36,11 +37,22 @@ logger = logging.getLogger(__name__)
 
 @app.on_event("startup")
 def startup_init_db():
-    try:
-        Base.metadata.create_all(bind=engine)
-    except Exception:
-        logger.exception("Database initialization failed. Check DATABASE_URL format and network access.")
-        raise
+    last_error = None
+    for attempt in range(5):
+        try:
+            Base.metadata.create_all(bind=engine)
+            return
+        except Exception as exc:
+            last_error = exc
+            logger.warning(
+                "Database initialization attempt %s failed; retrying shortly.",
+                attempt + 1,
+                exc_info=exc,
+            )
+            time.sleep(2)
+
+    logger.exception("Database initialization failed after retries. Check DATABASE_URL format and network access.")
+    raise last_error
 
 
 @app.post("/auth/signup", response_model=TokenResponse)
