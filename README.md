@@ -3,8 +3,14 @@
 ## 1) Live API Base URL and Deployment Notes
 
 - GitHub repository: [Aravinthpvm/Submission](https://github.com/Aravinthpvm/Submission)
-- Live base URL: PENDING_DEPLOYMENT
-- Live health/docs URL placeholder: `https://your-service.platform-domain/docs`
+- Live base URL: [submission-g5ho.onrender.com](https://submission-g5ho.onrender.com)
+- Live docs URL: [submission-g5ho.onrender.com/docs](https://submission-g5ho.onrender.com/docs)
+- Live login curl command:
+
+```bash
+curl -X POST "https://submission-g5ho.onrender.com/auth/login" -H "Content-Type: application/json" -d '{"email":"trainer1@skillbridge.dev","password":"Password123!"}'
+```
+
 - Deployment target tested locally: FastAPI app with PostgreSQL-compatible SQLAlchemy setup
 - If deployment is pending, this repository is still runnable and testable locally.
 
